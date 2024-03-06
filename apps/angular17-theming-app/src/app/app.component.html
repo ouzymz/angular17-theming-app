@@ -1,2 +1,52 @@
-<angular17-theming-app-nx-welcome></angular17-theming-app-nx-welcome>
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="drawer.toggle()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Theming APP</span>
+  <span style="flex: 1 1 auto;"></span> <!-- This fills the remaining space -->
+  <mat-button-toggle-group value="computer" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="computer" (click)="themeService.windowTheme()"><mat-icon>computer</mat-icon></mat-button-toggle>
+    <mat-button-toggle value="light" (click)="themeService.themeInfix.set(ThemeInfix.light)"><mat-icon>brightness_high</mat-icon></mat-button-toggle>
+    <mat-button-toggle value="dark" (click)="themeService.themeInfix.set(ThemeInfix.dark)"><mat-icon>brightness_2</mat-icon></mat-button-toggle>
+  </mat-button-toggle-group>
+
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <h4 style="margin: 1dvh;">Select Theme</h4>
+    <div style="display: flex; flex-direction: column; align-items: flex-start; margin: 2dvh;">
+      <button
+        mat-button
+        color="primary"
+        (click)="changeTheme(ThemePrefix.orange)"
+      >
+        Orange
+      </button>
+      <button
+        mat-button
+        color="primary"
+        (click)="changeTheme(ThemePrefix.strawberry)"
+      >
+        Strawberry
+      </button>
+
+    </div>
+  </mat-drawer>
+
+  <div
+    style="
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+    "
+  >
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

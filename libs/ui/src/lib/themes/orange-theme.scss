@@ -1,0 +1,19 @@
+$orange-primary: mat.define-palette(mat.$orange-palette);
+$orange-accent: mat.define-palette(mat.$blue-gray-palette);
+$orange-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $orange-primary,
+      accent: $orange-accent,
+    ),
+  )
+);
+
+$orange-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $orange-primary,
+      accent: $orange-accent,
+    ),
+  )
+);

@@ -1,0 +1,20 @@
+$strawberry-primary: mat.define-palette(mat.$pink-palette);
+$strawberry-accent: mat.define-palette(mat.$blue-gray-palette);
+
+$strawberry-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $strawberry-primary,
+      accent: $strawberry-accent,
+    ),
+  )
+);
+
+$strawberry-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $strawberry-primary,
+      accent: $strawberry-accent,
+    ),
+  )
+);

@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use '_themes' as themes;
+@include mat.core();
+
+@import 'strawberry-theme';
+@import 'orange-theme';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+// use any other themes here
+
+.orange-light-theme {
+  @include themes.theme($orange-light-theme);
+  
+}
+.strawberry-light-theme {
+  @include themes.theme($strawberry-light-theme);
+}
+.orange-dark-theme {
+  @include themes.theme($orange-dark-theme);
+}
+.strawberry-dark-theme {
+  @include themes.theme($strawberry-dark-theme);
+}

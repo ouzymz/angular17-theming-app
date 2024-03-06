@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '_custom-card-theme' as custom-card;
+
+@import 'strawberry-theme';
+@import 'orange-theme';
+
+@mixin theme($theme) {
+  @include mat.all-component-colors($theme);
+  @include custom-card.theme($theme); // include any other themes here
+}

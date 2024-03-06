@@ -1,0 +1,40 @@
+.custom-card {
+  margin: 10dvh;
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  overflow: hidden;
+  justify-content: space-between;
+  width: 60dvh;
+  height: fit-content;
+      img{
+          width: 40%;
+          height:auto;
+      };
+  
+      .custom-card-content{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          
+          p{
+              padding: 10px;
+          }
+  
+          .content-header{
+              
+              align-items: center;
+              padding: 10px;
+          }
+  
+          .content-footer{
+              padding: 10px;
+              button{
+                  border: none;
+                  padding: 10px;
+                  margin: 5px;
+                  border-radius: 5px;
+              }
+          }
+      }
+    }

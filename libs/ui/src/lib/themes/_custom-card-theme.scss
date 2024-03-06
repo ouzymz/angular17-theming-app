@@ -1,0 +1,32 @@
+// _carousel-theme.scss
+
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+
+@mixin color($theme) {
+  .custom-card {
+    color: mat.get-theme-color($theme, foreground, text);
+    .custom-card-content {
+      background-color: mat.get-theme-color($theme, background, card);
+      .content-header {
+        color: mat.get-theme-color($theme, foreground, text);
+        background-color: mat.get-theme-color($theme, primary, A200);
+      }
+      .content-footer{
+        button{
+            background-color: mat.get-theme-color($theme, primary, A100);
+        }
+      }
+    }
+  }
+  // include any other components here
+}
+
+// include any other themes here(typography, .etc) 
+
+@mixin theme($theme) {
+  @if mat.theme-has($theme, color) {
+    @include color($theme);
+  }
+}
