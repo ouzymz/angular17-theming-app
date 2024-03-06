@@ -1,0 +1,69 @@
+{
+  "name": "angular17-theming-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "angular17-theming-app",
+  "sourceRoot": "apps/angular17-theming-app/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular17-theming-app",
+        "index": "apps/angular17-theming-app/src/index.html",
+        "browser": "apps/angular17-theming-app/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular17-theming-app/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular17-theming-app/src/favicon.ico",
+          "apps/angular17-theming-app/src/assets"
+        ],
+        "styles": ["apps/angular17-theming-app/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "angular17-theming-app:build:production"
+        },
+        "development": {
+          "buildTarget": "angular17-theming-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "angular17-theming-app:build"
+      }
+    }
+  }
+}
