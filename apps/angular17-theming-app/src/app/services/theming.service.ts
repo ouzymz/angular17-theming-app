@@ -5,9 +5,13 @@ import { ThemeInfix, ThemePrefix, ThemeSuffix } from './theme.model';
   providedIn: 'root',
 })
 export class ThemingService {
+
+
   constructor() {
+    //Applies user's theme preference
     this.windowTheme();
 
+    //Applies user's theme preference on theme change
     effect(() => {
       document.body.classList.length === 0
         ? document.body.classList.add(this.theme())
@@ -28,7 +32,9 @@ export class ThemingService {
   themeInfix = signal<ThemeInfix>(ThemeInfix.light);
   themePrefix = signal<ThemePrefix>(ThemePrefix.orange);
 
+
   windowTheme() {
+    // Checks if browser has a theme preference
     if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
       window.matchMedia('(prefers-color-scheme: dark)').matches
         ? this.themeInfix.set(ThemeInfix.dark)

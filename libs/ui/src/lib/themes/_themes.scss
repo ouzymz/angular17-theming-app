@@ -1,3 +1,5 @@
+//_themes.scss
+
 @use 'sass:map';
 @use '@angular/material' as mat;
 @use '_custom-card-theme' as custom-card;
@@ -9,7 +11,7 @@
 @mixin theme($theme) {
   @include mat.all-component-colors($theme);
   @include custom-card.theme($theme); 
-  // include any other custom component themes here
+  // include any other custom component mixin here
 }
 
 @mixin all-themes {

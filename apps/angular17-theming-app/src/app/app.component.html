@@ -8,19 +8,33 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>Theming APP</span>
-  <span style="flex: 1 1 auto;"></span> <!-- This fills the remaining space -->
-  <mat-button-toggle-group value="computer" name="fontStyle" aria-label="Font Style">
-    <mat-button-toggle value="computer" (click)="themeService.windowTheme()"><mat-icon>computer</mat-icon></mat-button-toggle>
-    <mat-button-toggle value="light" (click)="themeService.themeInfix.set(ThemeInfix.light)"><mat-icon>brightness_high</mat-icon></mat-button-toggle>
-    <mat-button-toggle value="dark" (click)="themeService.themeInfix.set(ThemeInfix.dark)"><mat-icon>brightness_2</mat-icon></mat-button-toggle>
+  <span style="flex: 1 1 auto"></span>
+  <!-- This fills the remaining space -->
+  <mat-button-toggle-group
+    value="computer"
+    name="fontStyle"
+    aria-label="Font Style"
+  >
+    <mat-button-toggle value="computer" (click)="themeService.windowTheme()"
+      ><mat-icon>computer</mat-icon></mat-button-toggle
+    >
+    <mat-button-toggle
+      value="light"
+      (click)="themeService.themeInfix.set(ThemeInfix.light)"
+      ><mat-icon>brightness_high</mat-icon></mat-button-toggle
+    >
+    <mat-button-toggle
+      value="dark"
+      (click)="themeService.themeInfix.set(ThemeInfix.dark)"
+      ><mat-icon>brightness_2</mat-icon></mat-button-toggle
+    >
   </mat-button-toggle-group>
-
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <h4 style="margin: 1dvh;">Select Theme</h4>
-    <div style="display: flex; flex-direction: column; align-items: flex-start; margin: 2dvh;">
+    <h4 class="drawer-header" >Select Theme</h4>
+    <div class="example-sidenav-content">
       <button
         mat-button
         color="primary"
@@ -35,20 +49,18 @@
       >
         Strawberry
       </button>
-
     </div>
   </mat-drawer>
 
-  <div
-    style="
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      justify-content: center;
-    "
-  >
-    <angular17-theming-app-custom-card></angular17-theming-app-custom-card>
-    <angular17-theming-app-card></angular17-theming-app-card>
+  <div class="render-container">
+    <div class="card-container">
+      <angular17-theming-app-custom-card></angular17-theming-app-custom-card>
+      <h4>Custom Card</h4>
+    </div>
 
+    <div class="card-container">
+      <angular17-theming-app-card></angular17-theming-app-card>
+      <h4>Angular Material Card</h4>
+    </div>
   </div>
 </mat-drawer-container>

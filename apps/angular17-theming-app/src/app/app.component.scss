@@ -8,3 +8,17 @@
   align-items: flex-start;
   margin: 2dvh;
 }
+
+.card-container{
+  display: flex; flex-direction: column; align-items: center;
+}
+
+.render-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-header{
+  margin: 1dvh
+}
