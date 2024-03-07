@@ -1,27 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@use '@angular/material' as mat;
 @use '_themes' as themes;
-@include mat.core();
-
-
-@import 'node_modules/bootstrap/scss/_functions.scss';
-@import 'node_modules/bootstrap/scss/_variables.scss';
-@import 'node_modules/bootstrap/scss/_mixins.scss';
-
-
-@mixin deneme($theme){
-  $bs-custom-colors: (
-    'primary': mat.get-theme-color($theme, primary, default),
-    'secondary': mat.get-theme-color($theme, accent, default),
-  );
-
-  $theme-colors: map-merge($theme-colors, $bs-custom-colors);
-}
-
-@import 'strawberry-theme';
-@import 'orange-theme';
-
-
+@include themes.all-themes;
 
 html,
 body {
@@ -32,51 +11,3 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-  // use any other themes here
-
-.orange-light-theme {
-  @include themes.theme($orange-light-theme);
-  $bs-custom-colors: (
-    'primary': mat.get-theme-color($orange-light-theme, primary, default),
-    'secondary': mat.get-theme-color($orange-light-theme, accent, default),
-  );
-  $theme-colors: map-merge($theme-colors, $bs-custom-colors);
-  @import 'node_modules/bootstrap/scss/bootstrap.scss';
-
-  
-}
-
-.strawberry-light-theme {
-  @include themes.theme($strawberry-light-theme);
-
-  $bs-custom-colors: (
-    'primary': mat.get-theme-color($strawberry-light-theme, primary, default),
-    'secondary': mat.get-theme-color($strawberry-light-theme, accent, default),
-  );
-  $theme-colors: map-merge($theme-colors, $bs-custom-colors);
-  @import 'node_modules/bootstrap/scss/bootstrap.scss';
-}
-
-
-.orange-dark-theme {
-  @include themes.theme($orange-dark-theme);
-
-  $bs-custom-colors: (
-    'primary': mat.get-theme-color($orange-dark-theme, primary, default),
-    'secondary': mat.get-theme-color($orange-dark-theme, accent, default),
-  );
-
-  $theme-colors: map-merge($theme-colors, $bs-custom-colors);
-  @import 'node_modules/bootstrap/scss/bootstrap.scss';
-
-}
-.strawberry-dark-theme {
-  @include themes.theme($strawberry-dark-theme);
-  $bs-custom-colors: (
-    'primary': mat.get-theme-color($strawberry-dark-theme, primary, default),
-    'secondary': mat.get-theme-color($strawberry-dark-theme, accent, default),
-  );
-
-  $theme-colors: map-merge($theme-colors, $bs-custom-colors);
-  @import 'node_modules/bootstrap/scss/bootstrap.scss';
-}

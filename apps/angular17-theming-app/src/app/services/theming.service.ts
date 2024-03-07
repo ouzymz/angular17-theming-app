@@ -2,12 +2,12 @@ import { Injectable, computed, effect, signal } from '@angular/core';
 import { ThemeInfix, ThemePrefix, ThemeSuffix } from './theme.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemingService {
-
   constructor() {
     this.windowTheme();
+
     effect(() => {
       document.body.classList.length === 0
         ? document.body.classList.add(this.theme())
@@ -15,15 +15,13 @@ export class ThemingService {
             document.body.classList[0],
             this.theme()
           );
-      document.body.setAttribute('data-bs-theme', this.themeInfix());
     });
-
-    
   }
 
   theme = computed(() => {
-    console.log('theme', this.themePrefix(), this.themeInfix(), this.themeSuffix);
-    return this.themePrefix() + '-'+ this.themeInfix() + '-' + this.themeSuffix;
+    return (
+      this.themePrefix() + '-' + this.themeInfix() + '-' + this.themeSuffix
+    );
   });
 
   themeSuffix = ThemeSuffix.theme;
@@ -31,8 +29,12 @@ export class ThemingService {
   themePrefix = signal<ThemePrefix>(ThemePrefix.orange);
 
   windowTheme() {
-    window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? this.themeInfix.set(ThemeInfix.dark)
-      : this.themeInfix.set(ThemeInfix.light);
+    if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? this.themeInfix.set(ThemeInfix.dark)
+        : this.themeInfix.set(ThemeInfix.light);
+    } else{
+      this.themeInfix.set(ThemeInfix.dark)
+    }
   }
 }

@@ -7,13 +7,13 @@
 @mixin color($theme) {
   .custom-card {
     color: mat.get-theme-color($theme, foreground, text);
-    .custom-card-content {
+    &-content {
       background-color: mat.get-theme-color($theme, background, card);
-      .content-header {
+      &-header {
         color: mat.get-theme-color($theme, foreground, text);
         background-color: mat.get-theme-color($theme, primary, A200);
       }
-      .content-footer{
+      &-footer{
         button{
             background-color: mat.get-theme-color($theme, primary, A100);
         }

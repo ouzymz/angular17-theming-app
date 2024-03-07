@@ -12,26 +12,25 @@
           height:auto;
       };
   
-      .custom-card-content{
+      &-content{
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           
           p{
-              padding: 10px;
+              padding: 1rem;
           }
   
-          .content-header{
-              
+          &-header{
               align-items: center;
-              padding: 10px;
+              padding: 1rem;
           }
   
-          .content-footer{
-              padding: 10px;
+          &-footer{
+              padding: 1rem;
               button{
                   border: none;
-                  padding: 10px;
+                  padding: 0.5rem 1rem;
                   margin: 5px;
                   border-radius: 5px;
               }

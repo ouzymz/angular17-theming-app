@@ -1,12 +1,29 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 @use '_custom-card-theme' as custom-card;
-@use '_boostrap-card-theme' as bs-card;
+
+
+@import 'strawberry-theme';
+@import 'orange-theme';
 
 @mixin theme($theme) {
-  @include bs-card.theme($theme);
   @include mat.all-component-colors($theme);
-  @include custom-card.theme($theme); // include any other themes here
+  @include custom-card.theme($theme); 
+  // include any other custom component themes here
 }
 
-
+@mixin all-themes {
+  .orange-light-theme {
+    @include theme($orange-light-theme);
+  }
+  .strawberry-light-theme {
+    @include theme($strawberry-light-theme);
+  }
+  .orange-dark-theme {
+    @include theme($orange-dark-theme);
+  }
+  .strawberry-dark-theme {
+    @include theme($strawberry-dark-theme);
+  }
+  
+}

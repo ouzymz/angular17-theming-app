@@ -1,9 +1,0 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
-
-@mixin theme($theme) {
-  $bs-custom-colors: (
-    'primary': mat.get-theme-color($theme, primary, default),
-    'secondary': mat.get-theme-color($theme, accent, default),
-  );
-}
