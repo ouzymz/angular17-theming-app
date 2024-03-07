@@ -7,10 +7,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { BoostrapCardComponent, CardComponent, CustomCardComponent } from '@angular17-theming-app/ui';
 
 @Component({
   standalone: true,
-  imports: [RouterModule,MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatButtonToggleModule],
+  imports: [RouterModule,MatButtonModule,MatToolbarModule,MatIconModule,MatSidenavModule,MatButtonToggleModule,
+    CustomCardComponent,CardComponent, BoostrapCardComponent],
   selector: 'angular17-theming-app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

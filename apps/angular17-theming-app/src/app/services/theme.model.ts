@@ -4,11 +4,11 @@ export enum ThemePrefix {
   }
   
   export enum ThemeInfix {
-    dark = '-dark',
-    light = '-light',
+    dark = 'dark',
+    light = 'light',
   }
   
   export enum ThemeSuffix {
-    theme = '-theme',
+    theme = 'theme',
   }
   

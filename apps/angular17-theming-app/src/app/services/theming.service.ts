@@ -15,12 +15,15 @@ export class ThemingService {
             document.body.classList[0],
             this.theme()
           );
+      document.body.setAttribute('data-bs-theme', this.themeInfix());
     });
+
+    
   }
 
   theme = computed(() => {
     console.log('theme', this.themePrefix(), this.themeInfix(), this.themeSuffix);
-    return this.themePrefix() + this.themeInfix() + this.themeSuffix;
+    return this.themePrefix() + '-'+ this.themeInfix() + '-' + this.themeSuffix;
   });
 
   themeSuffix = ThemeSuffix.theme;
